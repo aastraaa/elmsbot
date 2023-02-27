@@ -1,0 +1,19 @@
+import discord
+from discord.ext import commands
+import random
+import json
+
+
+bot = commands.Bot(command_prefix="elms!", intents=discord.Intents.all())
+bot.remove_command('ping')
+
+@bot.event
+async def on_ready():
+  await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.playing, name="with my toes uwu"))
+
+@bot.command()
+async def ping(ctx):
+  embed = discord.Embed(title="Response from your butt server room", description="'pong' - idk probably like 600 ms", color = discord.Color.random())
+  await ctx.channel.send(embed=embed)
+
+bot.run("MTA3ODkxODM1Nzg3ODg0MTQ5NQ.GRfTIH.ccfwNTBTQNYakWvZ9ZGz5isqVVJdpYpFhXu-A4")
